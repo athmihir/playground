@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torchsummary import summary 
 import torch.optim as optim 
-from model import XORNN
+from XOR_model import XORNN
 
 dataset = [
         [torch.tensor([1,0], dtype=torch.float32).cuda(), torch.tensor([0,1], dtype=torch.float32).cuda()],
@@ -48,7 +48,6 @@ def evaluate(model):
 
 def test_output(beta1, alpha1, beta2, alpha2):
     
-    outputs = [0, 1, 1, 0]
     sigmoid = nn.Sigmoid()
     softmax = nn.Softmax(dim=0)
     for index, data in enumerate(dataset):
