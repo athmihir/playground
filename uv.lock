@@ -1,6 +1,29 @@
 version = 1
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "a5",
+    "playground",
+]
+
+[[package]]
+name = "a5"
+version = "0.1.0"
+source = { virtual = "A5" }
+dependencies = [
+    { name = "ipykernel" },
+    { name = "torch" },
+    { name = "tqdm" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ipykernel", specifier = ">=6.29.5" },
+    { name = "torch", specifier = ">=2.6.0" },
+    { name = "tqdm", specifier = ">=4.67.1" },
+]
+
 [[package]]
 name = "appnope"
 version = "0.1.4"
